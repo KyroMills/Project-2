@@ -1,0 +1,52 @@
+body {
+  display: flex;
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  
+}
+
+a {
+  color: #00B7FF;
+}
+
+#myTitle {
+  text-align: center;
+}
+body {
+  display: grid;
+  grid-template-columns: 20fr 20fr;
+  grid-template-rows: 50px 10fr 50px;
+  gap: 5px;
+  height: 500px;
+  margin: 0;
+  font-family: Helvetica;
+  text-align: center;
+  }
+.container {
+  height: 400px ;
+  width: 300px;
+  text-align: center;
+  background-color: white;
+  margin: 0 auto;
+  border: 1px solid black;
+  padding: 100px;
+  
+}
+
+.profile-pic {
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+}
+
+.cost {
+ 
+  font-size: 10px;
+}
+
+
+.picture {
+  background-color: black;
+}
+
+

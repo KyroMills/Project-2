@@ -1,0 +1,26 @@
+<%- include('../partials/header') %>
+<h2>Product List</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Name:</th>
+        <th>Price:</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- Write the line of EJS to iterate over movies using forEach -->
+      <% products.forEach(function(p) { %>
+        <tr>
+          <td>
+            <%= p.name %>
+          </td>
+          <td>
+            <%= p.price %>
+          </td>
+          <td><a href="/products/<%= p._id %>">Details</a></td>
+        </tr>
+        <% }); %>
+    </tbody>
+  </table>
+
+  <%- include('../partials/footer') %>
