@@ -8,13 +8,13 @@ function show(req,res){
         })
     })
 }
-function createProduct(req,res) {
-    let storeId = req.params.id;
-    req.body.store = storeId;
-    Product.create(req.body, function (err, product){
-        res.redirect(`/stores/${storeId}`)
-    });
-}
+// function createProduct(req,res) {
+//     let storeId = req.params.id;
+//     req.body.store = storeId;
+//     Product.create(req.body, function (err, product){
+//         res.redirect(`/stores/${storeId}`)
+//     });
+// }
 
 function index(req,res){
     Product.find({}, function(err, products){
@@ -30,12 +30,12 @@ function create(req, res) {
     const product = new Product(req.body);
     product.save(function(err) {
       if (err) console.log(err);
-    res.redirect('/products/new')
+    res.redirect('/products')
     });
   }
 module.exports = {
     show,
-    createProduct,
+    // createProduct,
     index,
     addNewProduct,
     create,

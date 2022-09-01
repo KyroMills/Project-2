@@ -3,7 +3,7 @@ const Schema = mongoose.Schema
 
 
 const productsSchema = new Schema({
-    name: { type: String, enum: ["Ram", "CPU", "VGU"] },
+    name: { type: String, enum: ["Ram", "CPU", "GPU"] },
     price: { type: Number, min: 0 },
 })
 
