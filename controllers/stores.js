@@ -10,7 +10,7 @@ function newStore(req,res) {
 function index(req,res) {
     Store.find({}, function(err, stores){
         if (err) return res.redirect('/');
-        res.render('stores/new', { stores })
+        res.render('stores/index', { stores })
     })
 }
 function show(req,res){

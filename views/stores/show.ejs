@@ -1,29 +1,33 @@
-<%- include('../partials/header') %>
-<h2>Product List:</h2>
-  <table>
-    <thead>
-      <tr>
-        <th>Name:</th>
-        <th>Price:</th>
-        <a href="/products/admin" id="newItem">Add an Item</a>
-      </tr>
-    </thead>
-    <% console.log(products) %> 
-    <tbody>
-      <!-- Write the line of EJS to iterate over movies using forEach -->
-      <% products.forEach(function(p) { %>
-         <% console.log(p+"this is a log") %> 
-        <tr>
-          <td>
-            <%= p.name %>
-          </td>
-          <td>
-            <%= p.price %>
-          </td>
-          <td><a href="/products/<%= p._id %>">Details</a></td>
-        </tr>
-        <% }); %>
-    </tbody> 
-  </table>
+<%- include('../partials/header')%>
 
-  <%- include('../partials/footer') %>
+<h2>Shopping Cart</h2>
+<%if (products.length) { %>
+        <tbody>
+            <% let total = 0 %>
+            <% products.forEach(function(p) { %>
+                <tr>
+                    <th>Name:</th>
+                    <td><%= p.name%></td>
+                    <th>Price:</th>
+                    <td><%= p.price%></td>
+                    <td>
+                        <% if (user && user._id.equals(p.user)) { %>
+                        <a href="/products/<%= p.id %>/editReview">Edit</a>
+                     
+                        <% } %>
+                    </td>
+                    <td>
+                        <form action="/products/<%= p._id %>?_method=DELETE" method="POST">
+                            <button type="submit">X</button>
+                          </form>
+                      </td>
+                </tr>
+<% })  %>
+
+<% } %>
+
+
+
+
+
+<%- include('../partials/footer')%>

@@ -1,9 +1,10 @@
 <%- include('../partials/header') %>
+<link rel="stylesheet" href="stylesheets/style.css">
 <form id="add-product" method="POST"
 action="/products" method="POST">
-<br><label>Product Info:</label><br>
+<label>Product Info:</label>
     Name:<input name ="name" type="text">
     Price:<input name ="price" type="number">
-<br><input type="submit" value="Create Product">
+<input type="submit" value="Create Product"></form>
 </form>
 <%- include('../partials/footer') %>
